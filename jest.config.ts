@@ -3,7 +3,7 @@ const IgnorePatterns = ['<rootDir>/node_modules/', '<rootDir>/templates/', '<roo
 module.exports = {
   verbose: false,
   preset: 'ts-jest',
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jest-environment-jsdom', //'jsdom',
   collectCoverage: true,
   transformIgnorePatterns: IgnorePatterns,
   testPathIgnorePatterns: IgnorePatterns,
@@ -25,12 +25,15 @@ module.exports = {
   },
   transform: {
     '.+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '^.+\\.svg$': '<rootDir>/__mocks__/svgTransform.cjs',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.svg$': '<rootDir>/__mocks__/svgMock.cjs',
   },
-  testRegex: '(/_tests_/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testRegex: '(/_tests_/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   clearMocks: true,
   moduleDirectories: ['node_modules', 'src'],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],

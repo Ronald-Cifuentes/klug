@@ -25,6 +25,23 @@ export default [
     'plugin:prettier/recommended'
   ),
   {
+    files: ['*.cjs', '*.js', '*.jsx'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      // No es necesario declarar parser aquí, Espree es el parser por defecto
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    rules: {
+      // Si quisieras poner reglas específicas para .js/.jsx, van aquí.
+    },
+  },
+  {
     plugins: {
       '@typescript-eslint': typescriptEslint,
       react: reactPlugin,
