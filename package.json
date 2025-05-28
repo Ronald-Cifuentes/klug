@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && npm run critical",
+    "build": "tsc && vite build",
     "critical": "critical dist/index.html --base=dist --inline --width=1300 --height=900",
     "lint": "eslint src --ext ts,tsx",
     "preview": "vite preview",
