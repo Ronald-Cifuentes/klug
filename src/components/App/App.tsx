@@ -1,9 +1,14 @@
-import { FC } from 'react'
+import './App.scss'
+
 import { AppProps } from './interfaces'
-import { AppContainer } from './App.styled'
+import { FC } from 'react'
 
 const App: FC<AppProps> = ({ dataTestId = 'app' }) => {
-  return <AppContainer data-testid={dataTestId}>Hi</AppContainer>
+  return (
+    <div className='AppContainer' data-testid={dataTestId}>
+      <img src='src/assets/klug.svg' alt='' />
+    </div>
+  )
 }
 
 export default App

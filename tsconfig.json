@@ -21,6 +21,6 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true
   },
-  "include": ["src", "jest-setup.ts"],
+  "include": ["src", "jest-setup.ts", "templates/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
